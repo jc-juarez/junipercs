@@ -8,7 +8,7 @@ How to Run Juniper CS
 *Requirements: 
 - Python 3.6+ installed.
 
-Make sure you have Python 3.6+ installed and run the following command on your terminal to install Juniper CS:
+Make sure you have Python 3.6+ installed and run the following command in your terminal to install Juniper CS:
 
 For MacOS/Linux:
 
