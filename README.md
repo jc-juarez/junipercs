@@ -2,7 +2,7 @@
 
 Juniper Command System is a Micro CLI Tool that allows you to manage your files, launch applications, as well as providing extra tools for OS Management.
 
-How to Run Juniper CS
+How to Install & Run Juniper CS
 ==========
 
 *Requirements: 
