@@ -3,12 +3,12 @@ import codecs
 import os
 
 VERSION = '0.0.1'
-DESCRIPTION = 'Juniper Command System is a Micro CLI Tool that allows you to manage your files, launch applications, as well as providing extra tools for OS Management.'
+DESCRIPTION = 'Juniper Command System is a Simple and Readable Micro CLI Tool.'
 LONG_DESCRIPTION = 'Juniper Command System is a Micro CLI Tool that allows you to manage your files, launch applications, as well as providing extra tools for OS Management.'
 
 # Setting up
 setup(
-    name="junipertest",
+    name="junipercs",
     version=VERSION,
     author="Juan Carlos Juárez",
     author_email="<jc.juarezgarcia@outlook.com>",

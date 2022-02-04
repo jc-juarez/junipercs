@@ -1,0 +1,825 @@
+Created by PLY version 3.11 (http://www.dabeaz.com/ply)
+
+Unused terminals:
+
+    APPEND
+    COMBINE
+    DASH
+    DEFINE
+    DELETE
+    DO
+    DOUBLEDASH
+    END
+    FROM
+    INSTANCE
+    LEFTPAR
+    MERGE
+    MODEL
+    NEW
+    NUMBER
+    OVERRIDEON
+    PATH
+    PIPE
+    QUOTES
+    RIGHTPAR
+    SEARCH
+    SELECT
+    SEMICOLON
+    SESSION
+    SET
+    START
+    TO
+    WEBSERVER
+
+Grammar
+
+Rule 0     S' -> juniper
+Rule 1     juniper -> juniper_command
+Rule 2     juniper_command -> command_selection
+Rule 3     juniper_command -> EXIT
+Rule 4     juniper_command -> VARIABLES
+Rule 5     juniper_command -> HELP
+Rule 6     juniper_command -> COMMANDS
+Rule 7     command_selection -> create
+Rule 8     command_selection -> goto
+Rule 9     command_selection -> list
+Rule 10    command_selection -> up
+Rule 11    command_selection -> down
+Rule 12    command_selection -> read
+Rule 13    command_selection -> forget
+Rule 14    command_selection -> var
+Rule 15    create -> create_directory
+Rule 16    create -> create_file
+Rule 17    goto -> GOTO STRING
+Rule 18    list -> list_string
+Rule 19    list -> list_id
+Rule 20    list -> list_this
+Rule 21    list_string -> LIST STRING
+Rule 22    list_id -> LIST ID
+Rule 23    list_this -> LIST THIS
+Rule 24    up -> UP STRING
+Rule 25    down -> DOWN
+Rule 26    read -> READ STRING is_string
+Rule 27    read -> READ ID
+Rule 28    forget -> FORGET ID
+Rule 29    create_directory -> CREATE DIRECTORY STRING AT STRING ARROW ID
+Rule 30    create_directory -> CREATE DIRECTORY STRING AT THIS ARROW ID
+Rule 31    create_directory -> CREATE DIRECTORY STRING AT STRING
+Rule 32    create_directory -> CREATE DIRECTORY STRING AT THIS
+Rule 33    create_file -> CREATE FILE STRING AT STRING ARROW ID
+Rule 34    create_file -> CREATE FILE STRING AT THIS ARROW ID
+Rule 35    create_file -> CREATE FILE STRING AT STRING
+Rule 36    create_file -> CREATE FILE STRING AT THIS
+Rule 37    create_file -> CREATE FILE STRING AT STRING WITH STRING ARROW ID
+Rule 38    create_file -> CREATE FILE STRING AT THIS WITH STRING ARROW ID
+Rule 39    create_file -> CREATE FILE STRING AT STRING WITH STRING
+Rule 40    create_file -> CREATE FILE STRING AT THIS WITH STRING
+Rule 41    var -> VAR FILE IS STRING ARROW ID
+Rule 42    var -> VAR DIRECTORY IS STRING ARROW ID
+Rule 43    is_string -> empty
+Rule 44    empty -> <empty>
+
+Terminals, with rules where they appear
+
+APPEND               : 
+ARROW                : 29 30 33 34 37 38 41 42
+AT                   : 29 30 31 32 33 34 35 36 37 38 39 40
+COMBINE              : 
+COMMANDS             : 6
+CREATE               : 29 30 31 32 33 34 35 36 37 38 39 40
+DASH                 : 
+DEFINE               : 
+DELETE               : 
+DIRECTORY            : 29 30 31 32 42
+DO                   : 
+DOUBLEDASH           : 
+DOWN                 : 25
+END                  : 
+EXIT                 : 3
+FILE                 : 33 34 35 36 37 38 39 40 41
+FORGET               : 28
+FROM                 : 
+GOTO                 : 17
+HELP                 : 5
+ID                   : 22 27 28 29 30 33 34 37 38 41 42
+INSTANCE             : 
+IS                   : 41 42
+LEFTPAR              : 
+LIST                 : 21 22 23
+MERGE                : 
+MODEL                : 
+NEW                  : 
+NUMBER               : 
+OVERRIDEON           : 
+PATH                 : 
+PIPE                 : 
+QUOTES               : 
+READ                 : 26 27
+RIGHTPAR             : 
+SEARCH               : 
+SELECT               : 
+SEMICOLON            : 
+SESSION              : 
+SET                  : 
+START                : 
+STRING               : 17 21 24 26 29 29 30 31 31 32 33 33 34 35 35 36 37 37 37 38 38 39 39 39 40 40 41 42
+THIS                 : 23 30 32 34 36 38 40
+TO                   : 
+UP                   : 24
+VAR                  : 41 42
+VARIABLES            : 4
+WEBSERVER            : 
+WITH                 : 37 38 39 40
+error                : 
+
+Nonterminals, with rules where they appear
+
+command_selection    : 2
+create               : 7
+create_directory     : 15
+create_file          : 16
+down                 : 11
+empty                : 43
+forget               : 13
+goto                 : 8
+is_string            : 26
+juniper              : 0
+juniper_command      : 1
+list                 : 9
+list_id              : 19
+list_string          : 18
+list_this            : 20
+read                 : 12
+up                   : 10
+var                  : 14
+
+Parsing method: LALR
+
+state 0
+
+    (0) S' -> . juniper
+    (1) juniper -> . juniper_command
+    (2) juniper_command -> . command_selection
+    (3) juniper_command -> . EXIT
+    (4) juniper_command -> . VARIABLES
+    (5) juniper_command -> . HELP
+    (6) juniper_command -> . COMMANDS
+    (7) command_selection -> . create
+    (8) command_selection -> . goto
+    (9) command_selection -> . list
+    (10) command_selection -> . up
+    (11) command_selection -> . down
+    (12) command_selection -> . read
+    (13) command_selection -> . forget
+    (14) command_selection -> . var
+    (15) create -> . create_directory
+    (16) create -> . create_file
+    (17) goto -> . GOTO STRING
+    (18) list -> . list_string
+    (19) list -> . list_id
+    (20) list -> . list_this
+    (24) up -> . UP STRING
+    (25) down -> . DOWN
+    (26) read -> . READ STRING is_string
+    (27) read -> . READ ID
+    (28) forget -> . FORGET ID
+    (41) var -> . VAR FILE IS STRING ARROW ID
+    (42) var -> . VAR DIRECTORY IS STRING ARROW ID
+    (29) create_directory -> . CREATE DIRECTORY STRING AT STRING ARROW ID
+    (30) create_directory -> . CREATE DIRECTORY STRING AT THIS ARROW ID
+    (31) create_directory -> . CREATE DIRECTORY STRING AT STRING
+    (32) create_directory -> . CREATE DIRECTORY STRING AT THIS
+    (33) create_file -> . CREATE FILE STRING AT STRING ARROW ID
+    (34) create_file -> . CREATE FILE STRING AT THIS ARROW ID
+    (35) create_file -> . CREATE FILE STRING AT STRING
+    (36) create_file -> . CREATE FILE STRING AT THIS
+    (37) create_file -> . CREATE FILE STRING AT STRING WITH STRING ARROW ID
+    (38) create_file -> . CREATE FILE STRING AT THIS WITH STRING ARROW ID
+    (39) create_file -> . CREATE FILE STRING AT STRING WITH STRING
+    (40) create_file -> . CREATE FILE STRING AT THIS WITH STRING
+    (21) list_string -> . LIST STRING
+    (22) list_id -> . LIST ID
+    (23) list_this -> . LIST THIS
+
+    EXIT            shift and go to state 4
+    VARIABLES       shift and go to state 5
+    HELP            shift and go to state 6
+    COMMANDS        shift and go to state 7
+    GOTO            shift and go to state 18
+    UP              shift and go to state 22
+    DOWN            shift and go to state 23
+    READ            shift and go to state 24
+    FORGET          shift and go to state 25
+    VAR             shift and go to state 26
+    CREATE          shift and go to state 27
+    LIST            shift and go to state 28
+
+    juniper                        shift and go to state 1
+    juniper_command                shift and go to state 2
+    command_selection              shift and go to state 3
+    create                         shift and go to state 8
+    goto                           shift and go to state 9
+    list                           shift and go to state 10
+    up                             shift and go to state 11
+    down                           shift and go to state 12
+    read                           shift and go to state 13
+    forget                         shift and go to state 14
+    var                            shift and go to state 15
+    create_directory               shift and go to state 16
+    create_file                    shift and go to state 17
+    list_string                    shift and go to state 19
+    list_id                        shift and go to state 20
+    list_this                      shift and go to state 21
+
+state 1
+
+    (0) S' -> juniper .
+
+
+
+state 2
+
+    (1) juniper -> juniper_command .
+
+    $end            reduce using rule 1 (juniper -> juniper_command .)
+
+
+state 3
+
+    (2) juniper_command -> command_selection .
+
+    $end            reduce using rule 2 (juniper_command -> command_selection .)
+
+
+state 4
+
+    (3) juniper_command -> EXIT .
+
+    $end            reduce using rule 3 (juniper_command -> EXIT .)
+
+
+state 5
+
+    (4) juniper_command -> VARIABLES .
+
+    $end            reduce using rule 4 (juniper_command -> VARIABLES .)
+
+
+state 6
+
+    (5) juniper_command -> HELP .
+
+    $end            reduce using rule 5 (juniper_command -> HELP .)
+
+
+state 7
+
+    (6) juniper_command -> COMMANDS .
+
+    $end            reduce using rule 6 (juniper_command -> COMMANDS .)
+
+
+state 8
+
+    (7) command_selection -> create .
+
+    $end            reduce using rule 7 (command_selection -> create .)
+
+
+state 9
+
+    (8) command_selection -> goto .
+
+    $end            reduce using rule 8 (command_selection -> goto .)
+
+
+state 10
+
+    (9) command_selection -> list .
+
+    $end            reduce using rule 9 (command_selection -> list .)
+
+
+state 11
+
+    (10) command_selection -> up .
+
+    $end            reduce using rule 10 (command_selection -> up .)
+
+
+state 12
+
+    (11) command_selection -> down .
+
+    $end            reduce using rule 11 (command_selection -> down .)
+
+
+state 13
+
+    (12) command_selection -> read .
+
+    $end            reduce using rule 12 (command_selection -> read .)
+
+
+state 14
+
+    (13) command_selection -> forget .
+
+    $end            reduce using rule 13 (command_selection -> forget .)
+
+
+state 15
+
+    (14) command_selection -> var .
+
+    $end            reduce using rule 14 (command_selection -> var .)
+
+
+state 16
+
+    (15) create -> create_directory .
+
+    $end            reduce using rule 15 (create -> create_directory .)
+
+
+state 17
+
+    (16) create -> create_file .
+
+    $end            reduce using rule 16 (create -> create_file .)
+
+
+state 18
+
+    (17) goto -> GOTO . STRING
+
+    STRING          shift and go to state 29
+
+
+state 19
+
+    (18) list -> list_string .
+
+    $end            reduce using rule 18 (list -> list_string .)
+
+
+state 20
+
+    (19) list -> list_id .
+
+    $end            reduce using rule 19 (list -> list_id .)
+
+
+state 21
+
+    (20) list -> list_this .
+
+    $end            reduce using rule 20 (list -> list_this .)
+
+
+state 22
+
+    (24) up -> UP . STRING
+
+    STRING          shift and go to state 30
+
+
+state 23
+
+    (25) down -> DOWN .
+
+    $end            reduce using rule 25 (down -> DOWN .)
+
+
+state 24
+
+    (26) read -> READ . STRING is_string
+    (27) read -> READ . ID
+
+    STRING          shift and go to state 31
+    ID              shift and go to state 32
+
+
+state 25
+
+    (28) forget -> FORGET . ID
+
+    ID              shift and go to state 33
+
+
+state 26
+
+    (41) var -> VAR . FILE IS STRING ARROW ID
+    (42) var -> VAR . DIRECTORY IS STRING ARROW ID
+
+    FILE            shift and go to state 34
+    DIRECTORY       shift and go to state 35
+
+
+state 27
+
+    (29) create_directory -> CREATE . DIRECTORY STRING AT STRING ARROW ID
+    (30) create_directory -> CREATE . DIRECTORY STRING AT THIS ARROW ID
+    (31) create_directory -> CREATE . DIRECTORY STRING AT STRING
+    (32) create_directory -> CREATE . DIRECTORY STRING AT THIS
+    (33) create_file -> CREATE . FILE STRING AT STRING ARROW ID
+    (34) create_file -> CREATE . FILE STRING AT THIS ARROW ID
+    (35) create_file -> CREATE . FILE STRING AT STRING
+    (36) create_file -> CREATE . FILE STRING AT THIS
+    (37) create_file -> CREATE . FILE STRING AT STRING WITH STRING ARROW ID
+    (38) create_file -> CREATE . FILE STRING AT THIS WITH STRING ARROW ID
+    (39) create_file -> CREATE . FILE STRING AT STRING WITH STRING
+    (40) create_file -> CREATE . FILE STRING AT THIS WITH STRING
+
+    DIRECTORY       shift and go to state 36
+    FILE            shift and go to state 37
+
+
+state 28
+
+    (21) list_string -> LIST . STRING
+    (22) list_id -> LIST . ID
+    (23) list_this -> LIST . THIS
+
+    STRING          shift and go to state 38
+    ID              shift and go to state 39
+    THIS            shift and go to state 40
+
+
+state 29
+
+    (17) goto -> GOTO STRING .
+
+    $end            reduce using rule 17 (goto -> GOTO STRING .)
+
+
+state 30
+
+    (24) up -> UP STRING .
+
+    $end            reduce using rule 24 (up -> UP STRING .)
+
+
+state 31
+
+    (26) read -> READ STRING . is_string
+    (43) is_string -> . empty
+    (44) empty -> .
+
+    $end            reduce using rule 44 (empty -> .)
+
+    is_string                      shift and go to state 41
+    empty                          shift and go to state 42
+
+state 32
+
+    (27) read -> READ ID .
+
+    $end            reduce using rule 27 (read -> READ ID .)
+
+
+state 33
+
+    (28) forget -> FORGET ID .
+
+    $end            reduce using rule 28 (forget -> FORGET ID .)
+
+
+state 34
+
+    (41) var -> VAR FILE . IS STRING ARROW ID
+
+    IS              shift and go to state 43
+
+
+state 35
+
+    (42) var -> VAR DIRECTORY . IS STRING ARROW ID
+
+    IS              shift and go to state 44
+
+
+state 36
+
+    (29) create_directory -> CREATE DIRECTORY . STRING AT STRING ARROW ID
+    (30) create_directory -> CREATE DIRECTORY . STRING AT THIS ARROW ID
+    (31) create_directory -> CREATE DIRECTORY . STRING AT STRING
+    (32) create_directory -> CREATE DIRECTORY . STRING AT THIS
+
+    STRING          shift and go to state 45
+
+
+state 37
+
+    (33) create_file -> CREATE FILE . STRING AT STRING ARROW ID
+    (34) create_file -> CREATE FILE . STRING AT THIS ARROW ID
+    (35) create_file -> CREATE FILE . STRING AT STRING
+    (36) create_file -> CREATE FILE . STRING AT THIS
+    (37) create_file -> CREATE FILE . STRING AT STRING WITH STRING ARROW ID
+    (38) create_file -> CREATE FILE . STRING AT THIS WITH STRING ARROW ID
+    (39) create_file -> CREATE FILE . STRING AT STRING WITH STRING
+    (40) create_file -> CREATE FILE . STRING AT THIS WITH STRING
+
+    STRING          shift and go to state 46
+
+
+state 38
+
+    (21) list_string -> LIST STRING .
+
+    $end            reduce using rule 21 (list_string -> LIST STRING .)
+
+
+state 39
+
+    (22) list_id -> LIST ID .
+
+    $end            reduce using rule 22 (list_id -> LIST ID .)
+
+
+state 40
+
+    (23) list_this -> LIST THIS .
+
+    $end            reduce using rule 23 (list_this -> LIST THIS .)
+
+
+state 41
+
+    (26) read -> READ STRING is_string .
+
+    $end            reduce using rule 26 (read -> READ STRING is_string .)
+
+
+state 42
+
+    (43) is_string -> empty .
+
+    $end            reduce using rule 43 (is_string -> empty .)
+
+
+state 43
+
+    (41) var -> VAR FILE IS . STRING ARROW ID
+
+    STRING          shift and go to state 47
+
+
+state 44
+
+    (42) var -> VAR DIRECTORY IS . STRING ARROW ID
+
+    STRING          shift and go to state 48
+
+
+state 45
+
+    (29) create_directory -> CREATE DIRECTORY STRING . AT STRING ARROW ID
+    (30) create_directory -> CREATE DIRECTORY STRING . AT THIS ARROW ID
+    (31) create_directory -> CREATE DIRECTORY STRING . AT STRING
+    (32) create_directory -> CREATE DIRECTORY STRING . AT THIS
+
+    AT              shift and go to state 49
+
+
+state 46
+
+    (33) create_file -> CREATE FILE STRING . AT STRING ARROW ID
+    (34) create_file -> CREATE FILE STRING . AT THIS ARROW ID
+    (35) create_file -> CREATE FILE STRING . AT STRING
+    (36) create_file -> CREATE FILE STRING . AT THIS
+    (37) create_file -> CREATE FILE STRING . AT STRING WITH STRING ARROW ID
+    (38) create_file -> CREATE FILE STRING . AT THIS WITH STRING ARROW ID
+    (39) create_file -> CREATE FILE STRING . AT STRING WITH STRING
+    (40) create_file -> CREATE FILE STRING . AT THIS WITH STRING
+
+    AT              shift and go to state 50
+
+
+state 47
+
+    (41) var -> VAR FILE IS STRING . ARROW ID
+
+    ARROW           shift and go to state 51
+
+
+state 48
+
+    (42) var -> VAR DIRECTORY IS STRING . ARROW ID
+
+    ARROW           shift and go to state 52
+
+
+state 49
+
+    (29) create_directory -> CREATE DIRECTORY STRING AT . STRING ARROW ID
+    (30) create_directory -> CREATE DIRECTORY STRING AT . THIS ARROW ID
+    (31) create_directory -> CREATE DIRECTORY STRING AT . STRING
+    (32) create_directory -> CREATE DIRECTORY STRING AT . THIS
+
+    STRING          shift and go to state 53
+    THIS            shift and go to state 54
+
+
+state 50
+
+    (33) create_file -> CREATE FILE STRING AT . STRING ARROW ID
+    (34) create_file -> CREATE FILE STRING AT . THIS ARROW ID
+    (35) create_file -> CREATE FILE STRING AT . STRING
+    (36) create_file -> CREATE FILE STRING AT . THIS
+    (37) create_file -> CREATE FILE STRING AT . STRING WITH STRING ARROW ID
+    (38) create_file -> CREATE FILE STRING AT . THIS WITH STRING ARROW ID
+    (39) create_file -> CREATE FILE STRING AT . STRING WITH STRING
+    (40) create_file -> CREATE FILE STRING AT . THIS WITH STRING
+
+    STRING          shift and go to state 55
+    THIS            shift and go to state 56
+
+
+state 51
+
+    (41) var -> VAR FILE IS STRING ARROW . ID
+
+    ID              shift and go to state 57
+
+
+state 52
+
+    (42) var -> VAR DIRECTORY IS STRING ARROW . ID
+
+    ID              shift and go to state 58
+
+
+state 53
+
+    (29) create_directory -> CREATE DIRECTORY STRING AT STRING . ARROW ID
+    (31) create_directory -> CREATE DIRECTORY STRING AT STRING .
+
+    ARROW           shift and go to state 59
+    $end            reduce using rule 31 (create_directory -> CREATE DIRECTORY STRING AT STRING .)
+
+
+state 54
+
+    (30) create_directory -> CREATE DIRECTORY STRING AT THIS . ARROW ID
+    (32) create_directory -> CREATE DIRECTORY STRING AT THIS .
+
+    ARROW           shift and go to state 60
+    $end            reduce using rule 32 (create_directory -> CREATE DIRECTORY STRING AT THIS .)
+
+
+state 55
+
+    (33) create_file -> CREATE FILE STRING AT STRING . ARROW ID
+    (35) create_file -> CREATE FILE STRING AT STRING .
+    (37) create_file -> CREATE FILE STRING AT STRING . WITH STRING ARROW ID
+    (39) create_file -> CREATE FILE STRING AT STRING . WITH STRING
+
+    ARROW           shift and go to state 61
+    $end            reduce using rule 35 (create_file -> CREATE FILE STRING AT STRING .)
+    WITH            shift and go to state 62
+
+
+state 56
+
+    (34) create_file -> CREATE FILE STRING AT THIS . ARROW ID
+    (36) create_file -> CREATE FILE STRING AT THIS .
+    (38) create_file -> CREATE FILE STRING AT THIS . WITH STRING ARROW ID
+    (40) create_file -> CREATE FILE STRING AT THIS . WITH STRING
+
+    ARROW           shift and go to state 63
+    $end            reduce using rule 36 (create_file -> CREATE FILE STRING AT THIS .)
+    WITH            shift and go to state 64
+
+
+state 57
+
+    (41) var -> VAR FILE IS STRING ARROW ID .
+
+    $end            reduce using rule 41 (var -> VAR FILE IS STRING ARROW ID .)
+
+
+state 58
+
+    (42) var -> VAR DIRECTORY IS STRING ARROW ID .
+
+    $end            reduce using rule 42 (var -> VAR DIRECTORY IS STRING ARROW ID .)
+
+
+state 59
+
+    (29) create_directory -> CREATE DIRECTORY STRING AT STRING ARROW . ID
+
+    ID              shift and go to state 65
+
+
+state 60
+
+    (30) create_directory -> CREATE DIRECTORY STRING AT THIS ARROW . ID
+
+    ID              shift and go to state 66
+
+
+state 61
+
+    (33) create_file -> CREATE FILE STRING AT STRING ARROW . ID
+
+    ID              shift and go to state 67
+
+
+state 62
+
+    (37) create_file -> CREATE FILE STRING AT STRING WITH . STRING ARROW ID
+    (39) create_file -> CREATE FILE STRING AT STRING WITH . STRING
+
+    STRING          shift and go to state 68
+
+
+state 63
+
+    (34) create_file -> CREATE FILE STRING AT THIS ARROW . ID
+
+    ID              shift and go to state 69
+
+
+state 64
+
+    (38) create_file -> CREATE FILE STRING AT THIS WITH . STRING ARROW ID
+    (40) create_file -> CREATE FILE STRING AT THIS WITH . STRING
+
+    STRING          shift and go to state 70
+
+
+state 65
+
+    (29) create_directory -> CREATE DIRECTORY STRING AT STRING ARROW ID .
+
+    $end            reduce using rule 29 (create_directory -> CREATE DIRECTORY STRING AT STRING ARROW ID .)
+
+
+state 66
+
+    (30) create_directory -> CREATE DIRECTORY STRING AT THIS ARROW ID .
+
+    $end            reduce using rule 30 (create_directory -> CREATE DIRECTORY STRING AT THIS ARROW ID .)
+
+
+state 67
+
+    (33) create_file -> CREATE FILE STRING AT STRING ARROW ID .
+
+    $end            reduce using rule 33 (create_file -> CREATE FILE STRING AT STRING ARROW ID .)
+
+
+state 68
+
+    (37) create_file -> CREATE FILE STRING AT STRING WITH STRING . ARROW ID
+    (39) create_file -> CREATE FILE STRING AT STRING WITH STRING .
+
+    ARROW           shift and go to state 71
+    $end            reduce using rule 39 (create_file -> CREATE FILE STRING AT STRING WITH STRING .)
+
+
+state 69
+
+    (34) create_file -> CREATE FILE STRING AT THIS ARROW ID .
+
+    $end            reduce using rule 34 (create_file -> CREATE FILE STRING AT THIS ARROW ID .)
+
+
+state 70
+
+    (38) create_file -> CREATE FILE STRING AT THIS WITH STRING . ARROW ID
+    (40) create_file -> CREATE FILE STRING AT THIS WITH STRING .
+
+    ARROW           shift and go to state 72
+    $end            reduce using rule 40 (create_file -> CREATE FILE STRING AT THIS WITH STRING .)
+
+
+state 71
+
+    (37) create_file -> CREATE FILE STRING AT STRING WITH STRING ARROW . ID
+
+    ID              shift and go to state 73
+
+
+state 72
+
+    (38) create_file -> CREATE FILE STRING AT THIS WITH STRING ARROW . ID
+
+    ID              shift and go to state 74
+
+
+state 73
+
+    (37) create_file -> CREATE FILE STRING AT STRING WITH STRING ARROW ID .
+
+    $end            reduce using rule 37 (create_file -> CREATE FILE STRING AT STRING WITH STRING ARROW ID .)
+
+
+state 74
+
+    (38) create_file -> CREATE FILE STRING AT THIS WITH STRING ARROW ID .
+
+    $end            reduce using rule 38 (create_file -> CREATE FILE STRING AT THIS WITH STRING ARROW ID .)
+

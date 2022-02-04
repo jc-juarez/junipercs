@@ -6,7 +6,7 @@
 # All rights reserved.
 # -------------------------------
 
-import juniper_source as jp
+import junipercs.juniper_source as jp
 import os
 
 def main(): 

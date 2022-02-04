@@ -1,0 +1,18 @@
+Metadata-Version: 2.1
+Name: junipercs
+Version: 0.0.1
+Summary: Juniper Command System is a Simple and Readable Micro CLI Tool.
+Home-page: UNKNOWN
+Author: Juan Carlos Juárez
+Author-email: <jc.juarezgarcia@outlook.com>
+License: UNKNOWN
+Description: Juniper Command System is a Micro CLI Tool that allows you to manage your files, launch applications, as well as providing extra tools for OS Management.
+Keywords: Python,CLI,Tool
+Platform: UNKNOWN
+Classifier: Development Status :: 1 - Planning
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: Unix
+Classifier: Operating System :: MacOS :: MacOS X
+Classifier: Operating System :: Microsoft :: Windows
+Description-Content-Type: text/markdown
