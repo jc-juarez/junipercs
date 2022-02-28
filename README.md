@@ -62,7 +62,7 @@ Juniper CS allows you to create, read, and traverse files and directories, as we
 - read "{file_path}"
 - read {variable_name}
 - var file is "{file_path}" -> {variable_name}
-- var directory is "{directory_path}" -> {variable_name}
+- var dir is "{directory_path}" -> {variable_name}
 - forget {variable_name}
    
 
