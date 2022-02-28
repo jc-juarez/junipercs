@@ -10,7 +10,7 @@ How to Install & Run Juniper CS
 
 Make sure you have Python 3.6+ installed and run the following command in your terminal to install Juniper CS:
 
-For MacOS/Linux:
+For MacOS and GNU/Linux:
 
 ```python
 pip3 install junipercs
@@ -24,7 +24,7 @@ pip install junipercs
 
 And now to start Juniper CS run the following command:
 
-For MacOS/Linux:
+For MacOS and GNU/Linux:
 
 ```python
 python3 -m junipercs
